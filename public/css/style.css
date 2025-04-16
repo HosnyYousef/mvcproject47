@@ -8,3 +8,10 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+/* STAR SYSTEM: */
+#rating { font-size: 0; }
+#rating span { font-size: 40px; }
+#rating span::before { content: "☆"; }
+#rating span.active::before {content: "★"; }
+#rating span:hover { cursor: pointer; }

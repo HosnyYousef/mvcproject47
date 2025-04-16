@@ -4,15 +4,22 @@ module.exports = {
     getBooktrackers: async (req,res)=>{
         try{
             const booktrackerItems = await Booktracker.find()
+            const scoreItems = await Booktracker.find()
             const itemsLeft = await Booktracker.countDocuments({completed: false})
-            res.render('booktrackers.ejs', {booktrackers: booktrackerItems, left: itemsLeft})
+            res.render('booktrackers.ejs', {
+                booktrackers: booktrackerItems, 
+                score: scoreItems, 
+                left: itemsLeft})
         }catch(err){
             console.log(err)
         }
     },
     createBooktracker: async (req, res)=>{
         try{
-            await Booktracker.create({booktracker: req.body.booktrackerItem, completed: false})
+            await Booktracker.create({
+                booktracker: req.body.booktrackerItem, 
+                score: req.body.scoreItem.span, 
+                completed: false})
             console.log('Booktracker has been added!')
             res.redirect('/booktrackers')
         }catch(err){

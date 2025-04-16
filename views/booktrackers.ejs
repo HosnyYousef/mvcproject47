@@ -11,8 +11,15 @@
     <h1>Booktrackers</h1>
     <ul>
     <% booktrackers.forEach( el => { %>
-        <li class='booktrackerItem' data-id='<%=el._id%>'>
+        <li class='booktrackerItem, scoreItem' data-id='<%=el._id%>'>
             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.booktracker %></span>
+            <div id='rating' class="scoreItem"><%= el.score %></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             <span class='del'> Delete </span>
         </li>
     <% }) %>    
@@ -22,7 +29,7 @@
 
     <form action="/booktrackers/createBooktracker" method='POST'>
         <input type="text" placeholder="Enter Booktracker Item" name='booktrackerItem'>
-        <input type="">
+        <input type="submit">
     </form>
 
     <script src="js/main.js"></script>

@@ -5,6 +5,10 @@ const BooktrackerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  score: {
+    type: String,
+    required: true,
+  },
   completed: {
     type: Boolean,
     required: true,
