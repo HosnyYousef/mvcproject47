@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1>Booktrackers</h1>
     <ul>
-    <% todos.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+    <% booktrackers.forEach( el => { %>
+        <li class='booktrackerItem' data-id='<%=el._id%>'>
+            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.booktracker %></span>
             <span class='del'> Delete </span>
         </li>
     <% }) %>    
@@ -20,8 +20,8 @@
 
     <h2>Things left to do: <%= left %></h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+    <form action="/booktrackers/createBooktracker" method='POST'>
+        <input type="text" placeholder="Enter Booktracker Item" name='booktrackerItem'>
         <input type="">
     </form>
 
