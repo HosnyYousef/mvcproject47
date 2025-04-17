@@ -8,7 +8,7 @@ module.exports = {
             const itemsLeft = await Booktracker.countDocuments({completed: false})
             res.render('booktrackers.ejs', {
                 booktrackers: booktrackerItems, 
-                score: scoreItems, 
+                scores: scoreItems, 
                 left: itemsLeft})
         }catch(err){
             console.log(err)
