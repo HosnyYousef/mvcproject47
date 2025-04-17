@@ -17,4 +17,4 @@ const BooktrackerSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Booktracker', BooktrackerSchema)
 
-localStorage.setItem('score')
+// localStorage.setItem('score')

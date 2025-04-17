@@ -18,7 +18,7 @@ module.exports = {
         try{
             await Booktracker.create({
                 booktracker: req.body.booktrackerItem, 
-                score: req.body.scoreItem.span, 
+                score: req.body.scoreItem, 
                 completed: false})
             console.log('Booktracker has been added!')
             res.redirect('/booktrackers')
