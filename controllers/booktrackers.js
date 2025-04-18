@@ -4,8 +4,9 @@ module.exports = {
     getBooktrackers: async (req,res)=>{
         try{
             const booktrackerItems = await Booktracker.find()
-            const scoreItems = await Booktracker.find()
+            const scoreItems = await Booktracker.find().default
             const itemsLeft = await Booktracker.countDocuments({completed: false})
+            console.log(Booktracker.find().default)
             res.render('booktrackers.ejs', {
                 booktrackers: booktrackerItems, 
                 scores: scoreItems, 
