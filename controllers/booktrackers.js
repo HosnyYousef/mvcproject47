@@ -6,7 +6,7 @@ module.exports = {
             const booktrackerItems = await Booktracker.find()
             const scoreItems = await Booktracker.find().default
             const itemsLeft = await Booktracker.countDocuments({completed: false})
-            console.log(Booktracker.find().default)
+            console.log(Booktracker.find().name)
             res.render('booktrackers.ejs', {
                 booktrackers: booktrackerItems, 
                 scores: scoreItems, 
