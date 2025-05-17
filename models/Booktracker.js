@@ -6,8 +6,8 @@ const BooktrackerSchema = new mongoose.Schema({
     required: true,
   },
   score: {
-    type: String, 
-    // default: <span value="1" class="active"></span>, 
+    type: Number, 
+    default: 1, 
     required: true,
   },
   completed: {
