@@ -72,10 +72,29 @@ async function markIncomplete(){
 
 // STAR SYSTEM:
 
-document.querySelector('#rating').addEventListener('click', function (e) {
+document.querySelector('#rating').addEventListener('click', async function (e) {
     let action = 'add';
     for (const span of this.children) {
         span.classList[action]('active');
         if (span === e.target) action = 'remove';
+    }
+    //here is where you update the rating in your DB
+    let newRating = Number(e.target.value);
+    //add your logic to grab the relevant id here
+    //here is where you make the PUT to the server (same as in markComplete, but with a different endpoint
+    const booktrackerId = this.parentNode.dataset.id
+    try{
+      const response = await fetch('booktrackers/updateRating', {
+          method: 'put',
+          headers: {'Content-type': 'application/json'},
+          body: JSON.stringify({
+            'booktrackerIdFromJSFile': booktrackerId
+            //send your rating to be updated
+          })
+      })
+      const data = await response.json()
+      console.log(data)
+    } catch(err){
+      console.log(err)
     }
 });

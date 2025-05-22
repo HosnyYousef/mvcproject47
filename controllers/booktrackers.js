@@ -49,6 +49,17 @@ module.exports = {
             console.log(err)
         }
     },
+    updateRating: async (req, res)=>{
+        try{
+            await Booktracker.findOneAndUpdate({_id:req.body.booktrackerIdFromJSFile},{
+                completed: false
+            })
+            console.log('Star Updated')
+            res.json('Star Updated')
+        }catch(err){
+            console.log(err)
+        }
+    },
     deleteBooktracker: async (req, res)=>{
         console.log(req.body.booktrackerIdFromJSFile)
         try{
