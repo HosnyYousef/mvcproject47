@@ -13,7 +13,7 @@
     <% booktrackers.forEach( el => { %>
         <li class='booktrackerItem, scoreItem' data-id='<%=el._id%>'>
             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.booktracker %></span>
-            <div id='rating' class="scoreItem"><%= el.score %>
+            <div id='rating' class="rating, scoreItem" data-id='<%=el._id%>'>
                 <span value='1'></span>
                 <span value='2'></span>
                 <span value='3'></span>

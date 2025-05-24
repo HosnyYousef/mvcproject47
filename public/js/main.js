@@ -82,7 +82,7 @@ document.querySelector('#rating').addEventListener('click', async function (e) {
     let newRating = Number(e.target.value);
     //add your logic to grab the relevant id here
     //here is where you make the PUT to the server (same as in markComplete, but with a different endpoint
-    const booktrackerId = this.parentNode.dataset.id
+    const booktrackerId = this.parentNode.dataset.score
     try{
       const response = await fetch('booktrackers/updateRating', {
           method: 'put',
